@@ -11,7 +11,7 @@ warning_colour := io.red;
 success_colour := io.green;
 
 pkg_exists : (pkg_name : string) bool {
-    ret web.get(`http://vault.kng.com/${pkg_name}`).response.body('ok');
+    ret web.get(`http://vault.kng-lang.org/${pkg_name}`).response.body('ok');
 }
 
 main : (args : string[]){
