@@ -32,7 +32,7 @@ to remove a package, use the r argument
 vault -r [package name]
 ```
 
-## deploying packages
+### deploying packages
 to deploy a packge, use the d argument
 ```
 vault -d [package directory]
@@ -51,10 +51,10 @@ example_package/
 example package.json
 ```
 {
-    id : "example_package_id",
-    name : "example package",
-    description : "an amazing packge you should use",
-    version : "0.0.1",
-    author : "james clarke"
+    "id" : "example_package_id",
+    "name" : "example package",
+    "description" : "an amazing packge you should use",
+    "version" : "0.0.1",
+    "author" : "james clarke"
 }
 ```

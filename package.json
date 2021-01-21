@@ -1,0 +1,7 @@
+{
+    "id" : "vault",
+    "name" : "vault",
+    "description" : "KNG package manager",
+    "version" : "0.0.1",
+    "author" : "james clarke"
+}
