@@ -1,0 +1,33 @@
+/*
+James Clarke 2021
+*/
+
+io : @import "io";
+utils : @import "utils";
+web : @import "web";
+
+msg_colour := io.yellow;
+warning_colour := io.red;
+success_colour := io.green;
+
+pkg_exists : (pkg_name : string) bool {
+    ret web.get(`http://vault.kng.com/${pkg_name}`).response.body('ok');
+}
+
+main : (args : string[]){
+    parser : utils.argparser;
+
+    parser.add_arg("h", () {
+        io.println("welcome to vault, KNG's native package manager!", msg_colour);
+        parser.display_args();
+    });
+
+    parser.add_arg("i", (arg : string){
+
+        if !pkg_exists(arg){
+            io.println("couldn't find package at vault.kng.com :(", warning_colour);
+            ret;
+        }
+        io.println(`downloading package ${arg}`, success_colour);
+    })
+}
